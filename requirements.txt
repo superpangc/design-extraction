@@ -1,0 +1,6 @@
+streamlit>=1.28.0
+pdfplumber
+pdf2docx
+python-docx
+openpyxl
+pandas

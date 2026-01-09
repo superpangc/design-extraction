@@ -5,6 +5,8 @@ from docx import Document
 from docx.text.paragraph import Paragraph
 from docx.table import Table
 from openpyxl.drawing.image import Image as OpenPyXlImage
+from PyPDF2 import PdfWriter, PdfReader
+
 PRINT_LOG = False
 CLEAN_AFTER_EXECUTION = False
 def find_element(children, target):
@@ -395,7 +397,6 @@ def extraction(string_input, input_type="file_name"):
     replace_linebreaks_with_paragraphs_simple("./output/input.docx", "./output/output.docx")
 
 def splitPDFpages(target):
-    from PyPDF2 import PdfWriter, PdfReader
     print(f"Removing Pages From: {target}")
     def find_visual_toc_pages(filepath):
         toc_pages = [0]
